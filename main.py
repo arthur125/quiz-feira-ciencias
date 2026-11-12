@@ -1,15 +1,16 @@
 pontos = 0
-tentativas = 3
+acertos = 0
 
-while tentativas > 0:
-    resposta = input('Quanto é 30 + 37?')
+perguntas = ["Quanto é 7 + 8: ", "Qual é a capital do Brasil: ", "Quantas horas tem um dia: "]
+respostas = ["15", "Brasilia", "24"]
 
-    if resposta == '67':
-        print('Resposta correta!')
+for i in range(3):
+    resposta = input(perguntas[i])
+    if resposta == respostas[i].lower():
         pontos += 1
-        break
+        acertos += 1
+        print('Resposta correta!')
     else:
-        print(f'Errado, tente novamente! Tentativas restantes: {tentativas}')
-        tentativas -= 1
+        print('Resposta incorreta!')
 
-print(f'Voce marcou {pontos} pontos!')
+print(f'Pontuação final: {pontos}. Você acertou {acertos} perguntas!')
